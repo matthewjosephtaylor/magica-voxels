@@ -1,6 +1,6 @@
 var readDict = require('../readDict');
 
-module.exports = function MATL(state, startIndex, endIndex){
+export function MATLHandler(state, startIndex, endIndex){
   var ret = {};
 
   // node id

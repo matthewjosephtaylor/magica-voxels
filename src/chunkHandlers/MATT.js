@@ -1,4 +1,4 @@
-module.exports = function MATTHandler(state, startIndex, endIndex){
+export function MATTHandler(state, startIndex, endIndex){
   var ret = {};
 
   ret.id = state.Buffer.readInt32LE(state.readByteIndex);

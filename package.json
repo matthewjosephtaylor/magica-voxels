@@ -1,12 +1,13 @@
 {
-  "name": "parse-magica-voxel",
-  "version": "2.0.0",
-  "description": "Parse MagicaVoxel .vox format to JS objects",
-  "main": "src/index.js",
+  "name": "@mjtdev/magica-voxels",
+  "version": "1.0.0",
+  "description": "Parse MagicaVoxel .vox format",
+  "main": "./dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "clear && npx tsc -b && (tput setaf 2; echo 'build successful :)'; tput sgr0)",
+    "watch": "watch ./src 'npm run build'"
   },
-  "postpublish": "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kevzettler/parse-magica-voxel.git"
@@ -28,9 +29,10 @@
   },
   "homepage": "https://github.com/kevzettler/parse-magica-voxel#readme",
   "dependencies": {
-    "buffer": "^5.0.2",
-    "debug": "^4.1.1",
-    "is-buffer": "^1.1.4"
+    "buffer": "^5.7.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/node": "^17.0.16",
+    "typescript": "^4.3.4"
+  }
 }

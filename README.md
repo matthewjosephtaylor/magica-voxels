@@ -1,43 +1,39 @@
-# Parse MagicaVoxel .vox file format
+# Parse MagicaVoxel .vox file format and other MagicaVoxel utilities
 Javascript parser for MagicaVoxel .vox file format:
 
 https://github.com/ephtracy/voxel-model/blob/master/MagicaVoxel-file-format-vox.txt
 
-Works in Browser and Node.js server environments
+This is a fork/rewrite of https://github.com/kevzettler/parse-magica-voxel 
+
+The target is modern ES6 browsers (which should work fine with node, ts-node, etc.. as well)
+
+This fork currently improves on the original by:
+- removing node dependencies (presently using Buffer pollyfill, possibly migrate to ArrayBuffer)
+- updates code to typescript (WIP)
+- works with Magica 99.6
+
+Plans (might happen if I need this):
+- write .vox files out from JSON format
 
 ## Install
 
 ```
-npm install parse-magica-voxel
+npm install https://github.com/matthewjosephtaylor/magica-voxels
+
 ```
 
 ## Usage
 see [examples](/example)
 
-* Node.js
-```javascript
-var fs = require('fs');
-var parseMagicaVoxel = require('parse-magica-voxel');
+```typescript
 
-fs.readFile("./chr_old.vox", function (err, Buffer) {
-  if (err) throw err;
-  console.log(JSON.stringify(parseMagicaVoxel(Buffer)));
-});
-```
+import { MagicaVoxels } from "@mjtdev/magica-voxels";
 
-* Browser
+const ab = await (await fetch("voxel/test.vox")).arrayBuffer();
 
-You will have to bundle the module with Webpack or Browserify and load the voxel file using `fetch` or another `XMLHttpRequest` utility
-```javascript
-var parseMagicaVoxel = require('parse-magica-voxel');
-var myRequest = new Request('magicavoxel.vox');
-fetch(myRequest).then(function(response) {
-    return response.arrayBuffer();
-  }).then(function(buffer) {
-     console.log(JSON.stringify(parseMagicaVoxel(Buffer));
-    });
-  });
-};
+const parsed = MagicaVoxels.parse(ab);
+console.log({ parsed });
+
 ```
 
 ### Result
@@ -60,4 +56,8 @@ fetch(myRequest).then(function(response) {
   ],
 }       
 ```
+
+### Thanks
+
+Big thanks to @kevzettler https://github.com/kevzettler https://www.kevzettler.com for the original project this is based on
 

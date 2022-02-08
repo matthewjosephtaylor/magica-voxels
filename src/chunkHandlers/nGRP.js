@@ -1,7 +1,7 @@
-var readDict = require('../readDict');
-var assert = require('assert');
+var readDict = require("../readDict");
+import { assert } from "../assert";
 
-module.exports = function nGRPHandler(state, startIndex, endIndex){
+export function nGRPHandler(state, startIndex, endIndex) {
   var ret = {};
 
   // node id
@@ -15,12 +15,14 @@ module.exports = function nGRPHandler(state, startIndex, endIndex){
   state.readByteIndex += 4;
 
   ret.child_ids = [];
-  for(var i=0; i<ret.num_of_children; i++){
+  for (var i = 0; i < ret.num_of_children; i++) {
     ret.child_ids.push(state.Buffer.readInt32LE(state.readByteIndex));
     state.readByteIndex += 4;
   }
 
-
-  assert(state.readByteIndex === endIndex, `nGRP chunk length mismatch: ${state.readByteIndex} ${endIndex}`);
+  assert(
+    state.readByteIndex === endIndex,
+    `nGRP chunk length mismatch: ${state.readByteIndex} ${endIndex}`
+  );
   return ret;
 }

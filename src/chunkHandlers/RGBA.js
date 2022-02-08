@@ -1,4 +1,4 @@
-module.exports = function RGBAHandler(state, startIndex, endIndex){
+export function RGBAHandler(state, startIndex, endIndex){
   var colors = new Array();
   for (var n = 0; n < 256; n++) {
     colors[n] = {

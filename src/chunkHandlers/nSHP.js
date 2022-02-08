@@ -1,7 +1,7 @@
 var readDict = require('../readDict');
-var assert = require('assert');
+import {assert} from '../assert'
 
-module.exports = function nSHPHandler(state, startIndex, endIndex){
+export  function nSHPHandler(state, startIndex, endIndex){
   var ret = {};
 
   // node id

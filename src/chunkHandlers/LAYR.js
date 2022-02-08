@@ -1,7 +1,8 @@
-const readDict = require('../readDict');
-const assert = require('assert');
+import readDict from '../readDict';
 
-module.exports = function LAYRHandler(state, startIndex, endIndex){
+import {assert} from '../assert'
+
+export function LAYRHandler(state, startIndex, endIndex){
   var ret = {};
 
   // node id
@@ -17,3 +18,5 @@ module.exports = function LAYRHandler(state, startIndex, endIndex){
 
   return ret;
 }
+
+

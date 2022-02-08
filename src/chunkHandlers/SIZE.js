@@ -1,6 +1,6 @@
-var assert = require('assert');
+import {assert} from '../assert'
 
-module.exports = function SIZEHandler(state, startIndex, endIndex){
+export function SIZEHandler(state, startIndex, endIndex){
   var sizex = state.Buffer.readInt32LE(state.readByteIndex);
   state.readByteIndex += 4;
 
