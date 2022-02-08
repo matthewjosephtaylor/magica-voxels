@@ -1,5 +1,6 @@
-# Parse MagicaVoxel .vox file format and other MagicaVoxel utilities
-Javascript parser for MagicaVoxel .vox file format:
+# Magica Voxels
+
+Javascript/Typescript Parser for MagicaVoxel .vox file format and other MagicaVoxel utilities
 
 https://github.com/ephtracy/voxel-model/blob/master/MagicaVoxel-file-format-vox.txt
 
@@ -61,3 +62,16 @@ console.log({ parsed });
 
 Big thanks to @kevzettler https://github.com/kevzettler https://www.kevzettler.com for the original project this is based on
 
+## Blame
+
+Matt Taylor https://mjt.dev
+
+## License
+
+MIT
+
+## Changelog
+
+| Date       | change                                                                                  |
+| ---------- | --------------------------------------------------------------------------------------- |
+| 2022-02-08 | Initial fork/rewrite changes to remove node dependencies and work with MagicaVoxel 99.6 |
