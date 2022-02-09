@@ -75,3 +75,4 @@ MIT
 | Date       | change                                                                                  |
 | ---------- | --------------------------------------------------------------------------------------- |
 | 2022-02-08 | Initial fork/rewrite changes to remove node dependencies and work with MagicaVoxel 99.6 |
+| 2022-02-08 | Added VoxData type info. Fixed the start-at-1 broken-by-design color-pallet indexing    |

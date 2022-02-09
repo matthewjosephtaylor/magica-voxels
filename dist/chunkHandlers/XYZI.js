@@ -8,7 +8,9 @@ export function XYZIHandler(state, startIndex, endIndex) {
             x: state.Buffer[state.readByteIndex++] & 0xff,
             y: state.Buffer[state.readByteIndex++] & 0xff,
             z: state.Buffer[state.readByteIndex++] & 0xff,
-            c: state.Buffer[state.readByteIndex++] & 0xff, //color index in RGBA
+            // WTF?!??!
+            // NOTE color [0-254] are mapped to palette index [1-255]
+            i: (state.Buffer[state.readByteIndex++] & 0xff) - 1, //color index in RGBA
         };
     }
     assert(state.readByteIndex === endIndex, "XYZI chunk did not fully read");

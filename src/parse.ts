@@ -4,9 +4,10 @@ import { recReadChunksInRange } from "./recReadChunksInRange";
 import { ByteLike } from "./ByteLike";
 
 import { Buffer } from "buffer";
+import { VoxData } from "./VoxData";
 const intByteLength = 4;
 
-export function parse(bytes: ByteLike) {
+export function parse(bytes: ByteLike): VoxData {
   const buffer = Buffer.from(bytes);
 
   var header = parseHeader(buffer);

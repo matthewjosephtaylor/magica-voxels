@@ -1,3 +1,4 @@
 import { ByteLike } from "./ByteLike";
-export declare function parse(bytes: ByteLike): any;
+import { VoxData } from "./VoxData";
+export declare function parse(bytes: ByteLike): VoxData;
 //# sourceMappingURL=parse.d.ts.map
