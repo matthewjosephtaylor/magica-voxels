@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "clear && npx tsc -b && (tput setaf 2; echo 'build successful :)'; tput sgr0)",
-    "watch": "watch ./src 'npm run build'"
+    "watch": "watch ./src 'npm run build'",
+    "postinstall": "npm install --ignore-scripts && npm run build"
   },
   "repository": {
     "type": "git",
