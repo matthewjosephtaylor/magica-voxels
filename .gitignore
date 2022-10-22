@@ -6,7 +6,6 @@ src/html/fonts/
 assets
 certs
 sync
-dist
 
 lib-cov
 *.seed

@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "clear && npx tsc -b && (tput setaf 2; echo 'build successful :)'; tput sgr0)",
-    "watch": "watch ./src 'npm run build'",
-    "postinstall": "npm run build"
+    "watch": "watch ./src 'npm run build'"
   },
   "repository": {
     "type": "git",
@@ -34,6 +33,6 @@
   },
   "devDependencies": {
     "@types/node": "^17.0.16",
-    "typescript": "^4.3.4"
+    "typescript": "^4.8.4"
   }
 }
